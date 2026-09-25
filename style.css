@@ -1,0 +1,203 @@
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== CORES PRINCIPAIS ===== */
+:root {
+  --azul: #2563eb;
+  --azul-claro: #dbeafe;
+  --roxo: #7c3aed;
+  --roxo-claro: #ede9fe;
+  --texto: #1e293b;
+  --texto-suave: #64748b;
+  --fundo: #f8fafc;
+  --branco: #ffffff;
+  --borda: #e2e8f0;
+  --verde: #16a34a;
+  --laranja: #ea580c;
+}
+
+/* ===== CORPO ===== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.5;
+  padding-bottom: 40px;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  background: linear-gradient(135deg, var(--azul), var(--roxo));
+  color: var(--branco);
+  padding: 28px 20px;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.cabecalho h1 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ===== CONTEÚDO ===== */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== CARDS DE RESUMO ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.card {
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card-emoji {
+  font-size: 1.6rem;
+}
+
+.card h3 {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  font-weight: 600;
+  margin: 6px 0 4px;
+}
+
+.card-valor {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--azul);
+}
+
+.card-obs {
+  font-size: 0.75rem;
+  color: var(--verde);
+  margin-top: 2px;
+}
+
+/* ===== TABELA ===== */
+.tabela-container {
+  background-color: var(--branco);
+  border-radius: 14px;
+  border: 1px solid var(--borda);
+  padding: 6px;
+  overflow-x: auto; /* rola para o lado no celular */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+table.boletim {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px; /* garante que a tabela não fique espremida */
+  font-size: 0.9rem;
+}
+
+table.boletim thead th {
+  background: linear-gradient(135deg, var(--azul), var(--roxo));
+  color: var(--branco);
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+table.boletim thead th:first-child {
+  text-align: left;
+  border-top-left-radius: 10px;
+}
+
+table.boletim thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+table.boletim tbody td {
+  padding: 10px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--borda);
+}
+
+table.boletim tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+table.boletim tbody tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+table.boletim tbody tr:hover {
+  background-color: var(--azul-claro);
+}
+
+/* ===== SITUAÇÕES (cores das etiquetas) ===== */
+.situacao {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.situacao.bom {
+  background-color: #dcfce7;
+  color: var(--verde);
+}
+
+.situacao.atencao {
+  background-color: #ffedd5;
+  color: var(--laranja);
+}
+
+.situacao.indisponivel {
+  background-color: var(--roxo-claro);
+  color: var(--roxo);
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+/* ===== AJUSTES PARA CELULAR ===== */
+@media (max-width: 600px) {
+  .cabecalho h1 {
+    font-size: 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-valor {
+    font-size: 1.3rem;
+  }
+}

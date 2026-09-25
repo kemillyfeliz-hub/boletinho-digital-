@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Garante que o site funcione bem em celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boletim Digital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <h1>Boletim Digital</h1>
+    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- CARDS DE RESUMO -->
+    <section class="cards">
+      <div class="card">
+        <span class="card-emoji">📊</span>
+        <h3>Média geral</h3>
+        <p class="card-valor" id="mediaGeral">—</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">📝</span>
+        <h3>Total de faltas</h3>
+        <p class="card-valor" id="totalFaltas">—</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">✅</span>
+        <h3>Bom desempenho</h3>
+        <p class="card-valor" id="bomDesempenho">—</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">⚠️</span>
+        <h3>Precisam de atenção</h3>
+        <p class="card-valor" id="atencao">—</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">📅</span>
+        <h3>Frequência</h3>
+        <p class="card-valor" id="frequencia">—</p>
+        <p class="card-obs">Frequência adequada</p>
+      </div>
+    </section>
+
+    <!-- TABELA DE NOTAS -->
+    <section class="tabela-container">
+      <table class="boletim">
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>1º Tri</th>
+            <th>2º Tri</th>
+            <th>3º Tri</th>
+            <th>Média</th>
+            <th>Faltas</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <!-- O JavaScript vai preencher esta parte -->
+        <tbody id="corpoTabela"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Projeto escolar — dados fictícios para demonstração.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
