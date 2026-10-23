@@ -12,63 +12,97 @@
   <!-- CABEÇALHO -->
   <header class="cabecalho">
     <h1>Boletim Digital</h1>
-    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
+    <p class="subtitulo">8º Ano — Turma 8A — Nº 34</p>
   </header>
 
   <main class="conteudo">
 
-    <!-- CARDS DE RESUMO -->
-    <section class="cards">
-      <div class="card">
-        <span class="card-emoji">📊</span>
-        <h3>Média geral</h3>
-        <p class="card-valor" id="mediaGeral">—</p>
+    <!-- TELA DE ACESSO POR PIN -->
+    <section class="acesso" id="telaAcesso">
+      <h2>Acessar boletim</h2>
+      <p class="acesso-info">8º Ano — Turma 8A — Nº 34</p>
+      <div class="acesso-campo">
+        <label for="campoPin">PIN</label>
+        <input type="password" id="campoPin" inputmode="numeric" autocomplete="off" placeholder="Digite seu PIN" />
       </div>
-
-      <div class="card">
-        <span class="card-emoji">📝</span>
-        <h3>Total de faltas</h3>
-        <p class="card-valor" id="totalFaltas">—</p>
-      </div>
-
-      <div class="card">
-        <span class="card-emoji">✅</span>
-        <h3>Bom desempenho</h3>
-        <p class="card-valor" id="bomDesempenho">—</p>
-      </div>
-
-      <div class="card">
-        <span class="card-emoji">⚠️</span>
-        <h3>Precisam de atenção</h3>
-        <p class="card-valor" id="atencao">—</p>
-      </div>
-
-      <div class="card">
-        <span class="card-emoji">📅</span>
-        <h3>Frequência</h3>
-        <p class="card-valor" id="frequencia">—</p>
-        <p class="card-obs">Frequência adequada</p>
-      </div>
+      <button id="botaoEntrar" class="botao botao-primario">Entrar</button>
+      <p class="acesso-mensagem" id="mensagemAcesso"></p>
     </section>
 
-    <!-- TABELA DE NOTAS -->
-    <section class="tabela-container">
-      <table class="boletim">
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>1º Tri</th>
-            <th>2º Tri</th>
-            <th>3º Tri</th>
-            <th>Média</th>
-            <th>Faltas</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <!-- O JavaScript vai preencher esta parte -->
-        <tbody id="corpoTabela"></tbody>
-      </table>
-    </section>
+    <!-- CONTEÚDO DO BOLETIM (escondido até entrar) -->
+    <div id="conteudoBoletim" class="oculto">
+
+      <!-- CARDS DE RESUMO -->
+      <section class="cards">
+        <div class="card">
+          <span class="card-emoji">📊</span>
+          <h3>Média geral</h3>
+          <p class="card-valor" id="mediaGeral">—</p>
+        </div>
+
+        <div class="card">
+          <span class="card-emoji">📝</span>
+          <h3>Total de faltas</h3>
+          <p class="card-valor" id="totalFaltas">—</p>
+        </div>
+
+        <div class="card">
+          <span class="card-emoji">✅</span>
+          <h3>Bom desempenho</h3>
+          <p class="card-valor" id="bomDesempenho">—</p>
+        </div>
+
+        <div class="card">
+          <span class="card-emoji">⚠️</span>
+          <h3>Precisam de atenção</h3>
+          <p class="card-valor" id="atencao">—</p>
+        </div>
+
+        <div class="card">
+          <span class="card-emoji">📅</span>
+          <h3>Frequência</h3>
+          <p class="card-valor" id="frequencia">—</p>
+          <p class="card-obs">Frequência adequada</p>
+        </div>
+      </section>
+
+      <!-- BOTÃO ALTERAR DADOS -->
+      <div class="acoes">
+        <button id="botaoAlterar" class="botao botao-secundario">Alterar dados</button>
+      </div>
+
+      <!-- TABELA DE NOTAS -->
+      <section class="tabela-container">
+        <table class="boletim">
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <!-- O JavaScript vai preencher esta parte -->
+          <tbody id="corpoTabela"></tbody>
+        </table>
+      </section>
+
+      <!-- PAINEL DE EDIÇÃO (escondido até clicar em Alterar dados) -->
+      <section class="editor oculto" id="painelEditor">
+        <h2>Alterar dados</h2>
+        <p class="editor-aviso">Notas aceitam de 0 a 10 (use vírgula ou ponto). Faltas devem ser números inteiros.</p>
+        <div id="listaEditor" class="lista-editor"></div>
+        <div class="editor-acoes">
+          <button id="botaoSalvar" class="botao botao-primario">Salvar alterações</button>
+          <button id="botaoCancelar" class="botao botao-secundario">Cancelar</button>
+        </div>
+        <p class="editor-mensagem" id="mensagemEditor"></p>
+      </section>
+
+    </div>
 
   </main>
 

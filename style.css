@@ -18,6 +18,7 @@
   --borda: #e2e8f0;
   --verde: #16a34a;
   --laranja: #ea580c;
+  --vermelho: #dc2626;
 }
 
 /* ===== CORPO ===== */
@@ -199,5 +200,233 @@ table.boletim tbody tr:hover {
 
   .card-valor {
     font-size: 1.3rem;
+  }
+}
+
+/* ===== UTILITÁRIO ===== */
+.oculto {
+  display: none !important;
+}
+
+/* ===== TELA DE ACESSO ===== */
+.acesso {
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 380px;
+  margin: 0 auto 28px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.acesso h2 {
+  font-size: 1.15rem;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+.acesso-info {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  margin-bottom: 16px;
+}
+
+.acesso-campo {
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.acesso-campo label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  margin-bottom: 4px;
+}
+
+.acesso-campo input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--texto);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.acesso-campo input:focus {
+  border-color: var(--azul);
+}
+
+.acesso-mensagem {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  color: var(--texto-suave);
+}
+
+.acesso-mensagem.erro {
+  color: var(--vermelho);
+  font-weight: 600;
+}
+
+.acesso-mensagem.sucesso {
+  color: var(--verde);
+  font-weight: 600;
+}
+
+/* ===== BOTÕES ===== */
+.botao {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.botao:hover {
+  opacity: 0.9;
+}
+
+.botao:active {
+  transform: scale(0.98);
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.botao-primario {
+  background: linear-gradient(135deg, var(--azul), var(--roxo));
+  color: var(--branco);
+}
+
+.botao-secundario {
+  background-color: var(--azul-claro);
+  color: var(--azul);
+}
+
+/* ===== AÇÕES DO BOLETIM ===== */
+.acoes {
+  text-align: right;
+  margin-bottom: 14px;
+}
+
+/* ===== PAINEL DE EDIÇÃO ===== */
+.editor {
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.editor h2 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.editor-aviso {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-bottom: 16px;
+}
+
+.lista-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.editor-disciplina {
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.editor-disciplina h3 {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: var(--texto);
+}
+
+.editor-campos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.editor-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.editor-campo label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.editor-campo input {
+  padding: 8px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.editor-campo input:focus {
+  border-color: var(--azul);
+}
+
+.editor-campo input.invalido {
+  border-color: var(--vermelho);
+  background-color: #fef2f2;
+}
+
+.editor-acoes {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.editor-mensagem {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  text-align: right;
+}
+
+.editor-mensagem.erro {
+  color: var(--vermelho);
+  font-weight: 600;
+}
+
+.editor-mensagem.sucesso {
+  color: var(--verde);
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVO DO EDITOR ===== */
+@media (max-width: 600px) {
+  .acoes {
+    text-align: center;
+  }
+
+  .editor-acoes {
+    flex-direction: column;
+  }
+
+  .editor-acoes .botao {
+    width: 100%;
   }
 }
